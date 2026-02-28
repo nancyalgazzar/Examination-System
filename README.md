@@ -56,10 +56,3 @@ supports:
 ✔ File I/O\
 ✔ Enum Usage
 
-------------------------------------------------------------------------
-
-# 👩‍💻 Author
-
-Nancy Ayman\
-Computer Engineering Graduate\
-Passionate about Software Engineering & AI Systems
