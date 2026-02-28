@@ -1,0 +1,34 @@
+Choose True or False
+
+Availability is considered one of the security goals and it means ensuring that illegitimate users are not denied access to information and resources.
+  Mark:2 
+
+1: true 
+2: false  
+
+
+Choose only one Answer
+
+The process of a web server adding a TCP header to the contents of a web page, followed by adding an IP header and then adding a data-link header and trailer, is an example of what?
+  Mark:5 
+
+1: Data encapsulation 
+2: Same-layer interaction 
+3: OSI model 
+4: All of these answers are correct 
+
+
+
+choose all correct answers
+
+In which class the IP address 92.168.1.1 exists
+  Mark:5 
+
+1: Class A 
+2: Class B 
+3: Class C 
+4: Class D 
+
+
+
+
