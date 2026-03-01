@@ -104,21 +104,24 @@ namespace ExaminationSystem
             }
             
             //////////////////////pick question//
-            int etype;
-            inputint(out etype, " Please enter 1 for FinalExam and 2 for practice exam");
-            if(etype == 1)
+            while (true)
             {
-                fn.Start();
-                fn.Finish();
-                fn.CorrectExam();
-                fn.ShowExam();
-            }
-            else
-            {
-                pt.Start();
-                pt.Finish();
-                pt.CorrectExam();
-                pt.ShowExam();
+                int etype;
+                inputint(out etype, " Please enter 1 for FinalExam and 2 for practice exam");
+                if (etype == 1)
+                {
+                    fn.Start();
+                    fn.Finish();
+                    fn.CorrectExam();
+                    fn.ShowExam();
+                }
+                else
+                {
+                    pt.Start();
+                    pt.Finish();
+                    pt.CorrectExam();
+                    pt.ShowExam();
+                } 
             }
         }
     }

@@ -26,7 +26,7 @@ namespace ExaminationSystem.Model.ExamClasses
         //    set { if (index > -1 && index < numberOfQuestions&& value is not null) questions[index] = value;  }
         //}
 
-        public Exam(int _numberOfQuestions, Subject sub,string logFileName= Constants.LogFileName)
+        public Exam(int _numberOfQuestions, Subject sub,string logFileName = Constants.LogFileName)
         {
             time = DateTime.Now;
             numberOfQuestions = _numberOfQuestions;
@@ -46,6 +46,8 @@ namespace ExaminationSystem.Model.ExamClasses
         public virtual void Start()
         {
             Mode = ExamMode.Starting;
+            //timer exam or question.-event related-
+            //move this to show function.
             for (int i = 0; i < questions.Length; i++)
             {
                 if (questions[i] is not null)
@@ -57,9 +59,9 @@ namespace ExaminationSystem.Model.ExamClasses
                         Console.WriteLine("Answer: Enter the answer number or text, If there is more than one correct answer separate them by \",\" ");
                         ans = Console.ReadLine();
                     } while (!Helper.IsStringValid(ans));
-                    if (questions[i] is ChooseAllQuestion)
+                    if (questions[i] is ChooseAllQuestion q&& q is not null)
                     {
-                       QuestionAnswerDictionary.Add( questions[i],multiAnswers(ans.Split(',')));//assume answers are separated by ,  
+                       QuestionAnswerDictionary.Add( q,multiAnswers(ans.Split(',')));//assume answers are separated by ,  
                     }
                     else
                     {
@@ -98,6 +100,7 @@ namespace ExaminationSystem.Model.ExamClasses
         }
         public virtual void Finish()
         {
+            //timer
             Mode = ExamMode.Finished;
             Console.WriteLine("WITH BEST WISHES");
         }
@@ -116,12 +119,9 @@ namespace ExaminationSystem.Model.ExamClasses
 
         public override string ToString()
         {
-            return base.ToString();
+            return base.ToString();//what to print?
         }
-        //public override int GetHashCode()
-        //{
-        //    return base.GetHashCode();
-        //}
+        
         public override bool Equals(object? obj)
         {
             if(obj == null|| obj is not  Exam) return false;

@@ -61,11 +61,10 @@ namespace ExaminationSystem.Model.AnswerClasses
                 return 1 ;
             return id.CompareTo(other.id);
         }
-        //public override int GetHashCode()
-        //{
-        //    return base.GetHashCode();
-        //}
 
-       
+        public override int GetHashCode()
+        {
+            return HashCode.Combine(text, id, ID, Text);
+        }
     }
 }
